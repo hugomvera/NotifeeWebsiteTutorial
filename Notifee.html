@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Notifications with Notifee</title>
+    <style>
+        /* --- CSS VARIABLES --- */
+        :root {
+            --bg-color: #ffffff;
+            --text-color: #1a202c;
+            --header-color: #111827;
+            --lead-bg: #f7fafc;
+            --lead-border: #3182ce;
+            --tag-bg: #edf2f7;
+            --tag-text: #4a5568;
+            --btn-bg: #333;
+            --btn-text: #fff;
+        }
+
+        [data-theme="dark"] {
+            --bg-color: #121212;
+            --text-color: #e0e0e0;
+            --header-color: #ffffff;
+            --lead-bg: #1a1a1a;
+            --lead-border: #3182ce;
+            --tag-bg: #2d3748;
+            --tag-text: #a0aec0;
+            --btn-bg: #f7fafc;
+            --btn-text: #333;
+        }
+
+        /* --- BASE STYLES --- */
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .container {
+            max-width: 750px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        /* --- THEME TOGGLE BUTTON --- */
+        .theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 10px 15px;
+            background: var(--btn-bg);
+            color: var(--btn-text);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        /* --- ARTICLE STYLES --- */
+        .post-title {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: var(--header-color);
+            margin-bottom: 20px;
+            letter-spacing: -0.02em;
+        }
+
+        .lead-text {
+            font-size: 1.25rem;
+            background-color: var(--lead-bg);
+            border-left: 5px solid var(--lead-border);
+            padding: 25px;
+            margin-bottom: 30px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .meta-info {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 40px;
+        }
+
+        .tag {
+            background: var(--tag-bg);
+            color: var(--tag-text);
+            padding: 5px 12px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-family: "SFMono-Regular", Consolas, monospace;
+            font-weight: 600;
+        }
+
+        @media (max-width: 600px) {
+            .post-title { font-size: 2rem; }
+            .container { margin: 30px auto; }
+        }
+    </style>
+</head>
+<body>
+
+    <button class="theme-toggle" onclick="toggleTheme()">Switch Theme</button>
+
+    <div class="container">
+        <article>
+            <header>
+                <h1 class="post-title">Advanced Notifications in React Native with Notifee</h1>
+                
+                <div class="meta-info">
+                    <span class="tag">React Native</span>
+                    <span class="tag">Notifee</span>
+                    <span class="tag">Mobile Dev</span>
+                </div>
+
+                <h2> Introduction</h2>
+                <div class="lead-text">
+                    In order to bring notifications to the next level, we need a powerful tool in React Native. 
+                    <strong>Notifee</strong> handles notifications for the most part in both iOS and Android 
+                    with very similar code.
+
+
+
+                </div>
+
+
+
+
+
+
+            </header>
+
+
+            <h2>  Setting Up the Project</h2>
+            
+            <div class="lead-text">
+run the following command: 
+
+<p style="text-align:center">npx @react-native-community/cli@latest init NotifeeDemonstration
+</p>
+We need to install the notifee library 
+
+
+<p style ="text-align:center"> npm install --save @notifee/react-native
+</p>
+
+change directory into the project file 
+
+<p style = 'text-align:center'>
+cd NotifeeDemonstration</p>
+
+
+now run in terminal metro the react native server
+
+<p style ='text-align:center'>
+npx react-native start 
+</p>
+followd by the ios or android emulator in our case we  are using  Android 
+<p style = 'text-align:center'>
+npx react-native run-android
+</p>
+              </div>
+
+
+            </article>
+    </div>
+
+    <script>
+        function toggleTheme() {
+            const body = document.documentElement;
+            const currentTheme = body.getAttribute('data-theme');
+            if (currentTheme === 'dark') {
+                body.setAttribute('data-theme', 'light');
+            } else {
+                body.setAttribute('data-theme', 'dark');
+            }
+        }
+    </script>
+</body>
+</html>
