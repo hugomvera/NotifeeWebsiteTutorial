@@ -40,6 +40,56 @@
             transition: background-color 0.3s, color 0.3s;
         }
 
+
+
+/* Terminal Box Styling */
+.terminal-block {
+    background-color: #1a1a1b; /* Dark charcoal */
+    border-radius: 6px;
+    margin: 25px 0;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    border: 1px solid #333;
+}
+
+/* The "Top Bar" of the terminal */
+.terminal-header {
+    background-color: #333;
+    padding: 8px 15px;
+    display: flex;
+    gap: 6px;
+    align-items: center;
+}
+
+.dot { height: 10px; width: 10px; border-radius: 50%; }
+.red { background: #ff5f56; }
+.yellow { background: #ffbd2e; }
+.green { background: #27c93f; }
+
+/* The actual command text */
+.terminal-body {
+    padding: 15px;
+    margin: 0;
+    color: #f8f8f2;
+    font-family: 'Ubuntu Mono', 'Fira Code', 'Courier New', monospace;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    overflow-x: auto;
+}
+
+/* Styling the prompt ($) */
+.prompt {
+    color: #50fa7b; /* Linux green prompt */
+    user-select: none; /* Prevents $ from being copied */
+    margin-right: 8px;
+}
+
+.command {
+    color: #f8f8f2;
+}
+
+
+
         .container {
             max-width: 750px;
             margin: 60px auto;
@@ -68,6 +118,67 @@
             margin-bottom: 20px;
             letter-spacing: -0.02em;
         }
+
+/* Linux Terminal Styling */
+.linux-terminal {
+    background-color: #0c0c0c; /* Deep black/grey */
+    border: 1px solid #444;
+    border-radius: 4px;
+    margin: 25px 0;
+    font-family: 'Ubuntu Mono', 'DejaVu Sans Mono', monospace;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+}
+
+.terminal-header {
+    background-color: #2d2d2d; /* Solid dark grey header */
+    padding: 5px 12px;
+    color: #bbb;
+    font-size: 0.8rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #444;
+}
+
+.terminal-body {
+    padding: 15px;
+    margin: 0;
+    color: #ffffff;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    overflow-x: auto;
+}
+
+/* Linux-style Prompt: user@machine:~/path$ */
+.prompt-user {
+    color: #4e9a06; /* Classic Linux Green */
+    font-weight: bold;
+}
+
+.prompt-path {
+    color: #3465a4; /* Classic Linux Blue */
+    font-weight: bold;
+}
+
+.prompt-symbol {
+    color: #ffffff;
+    margin-right: 10px;
+}
+
+/* Optional: Blinking cursor effect at the end of a command */
+.cursor {
+    display: inline-block;
+    width: 8px;
+    height: 15px;
+    background: #fff;
+    margin-left: 5px;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    50% { opacity: 0; }
+}
+
 
         .lead-text {
             font-size: 1.25rem;
@@ -136,35 +247,177 @@
             <h2>  Setting Up the Project</h2>
             
             <div class="lead-text">
-run the following command: 
 
-<p style="text-align:center">npx @react-native-community/cli@latest init NotifeeDemonstration
+
+
+We need to create the project in CLI and not expo! 
+
+
+
+<div class="linux-terminal">
+    <div class="terminal-header">
+        <span>hugo@debian: ~/NotifeeArticle</span>
+        <span>bash</span>
+    </div>
+    <pre class="terminal-body"><code><span class="prompt-user"></span><span class="prompt-path"></span><span class="prompt-symbol"></span><span class="command">npx @react-native-community/cli@latest init NotifeeDemonstration </span><span class="cursor"></span></code></pre>
+</div>
+
+
+<p style="text-align:center">             run the following command this will install the package for notifee 
 </p>
-We need to install the notifee library 
 
 
-<p style ="text-align:center"> npm install --save @notifee/react-native
-</p>
+<div class="linux-terminal">
+    <div class="terminal-header">
+        <span>hugo@debian: ~/NotifeeArticle</span>
+        <span>bash</span>
+    </div>
+    <pre class="terminal-body"><code><span class="prompt-user">hugo@debian</span>:<span class="prompt-path">~/NotifeeArticle</span><span class="prompt-symbol">$</span><span class="command">npm install --save @notifee/react-native</span><span class="cursor"></span></code></pre>
+</div>
+
+
+
+
+
+
+
 
 change directory into the project file 
 
-<p style = 'text-align:center'>
-cd NotifeeDemonstration</p>
+<div class="linux-terminal">
+    <div class="terminal-header">
+        <span>hugo@debian: ~/NotifeeArticle</span>
+        <span>bash</span>
+    </div>
+    <pre class="terminal-body"><code><span class="prompt-user">hugo@debian</span>:<span class="prompt-path">~/NotifeeArticle</span><span class="prompt-symbol">$</span><span class="command">cd NotifeeDemonstration
+</span><span class="cursor"></span></code></pre>
+</div>
+
+
+
+
+
+
 
 
 now run in terminal metro the react native server
 
-<p style ='text-align:center'>
-npx react-native start 
-</p>
+
+<div class="linux-terminal">
+    <div class="terminal-header">
+        <span>hugo@debian: ~/NotifeeArticle</span>
+        <span>bash</span>
+    </div>                                                                                                                                                                                                          <p style ='text-align:center'>
+    <pre class="terminal-body"><code><span class="prompt-user">hugo@debian</span>:<span class="prompt-path">~/NotifeeArticle</span><span class="prompt-symbol">$</span><span class="command">npx  react-native start 
+</span><span class="cursor"></span></code></pre>                                                                                                                                                                    </p>
+</div>                                                                                                                              
+
 followd by the ios or android emulator in our case we  are using  Android 
-<p style = 'text-align:center'>
-npx react-native run-android
-</p>
+in a new termnial tab
+
+
+
+
+<div class="linux-terminal">
+    <div class="terminal-header">
+        <span>hugo@debian: ~/NotifeeArticle</span>
+        <span>bash</span>
+    </div>                                                                                                                                                                                                          <p style ='text-align:center'>
+    <pre class="terminal-body"><code><span class="prompt-user">hugo@debian</span>:<span class="prompt-path">~/NotifeeArticle</span><span class="prompt-symbol">$</span><span class="command"> npx react-native run-android
+ 
+</span><span class="cursor"></span></code></pre>                                                                                                                                                                    </p>
+</div>                                                                                                                              
+
+    This is the Starter Code. It is a Button with the Basic hello wrold for react native. it does have imports for notifee so far. 
+remove App.tsx and create App.js with the following code
+
+<div style="background-color: #282c34; color: #abb2bf; padding: 20px; border-radius: 8px; font-family: 'Courier New', Courier, monospace; line-height: 1.5; overflow-x: auto;">
+  <pre style="margin: 0;"><code><span style="color: #c678dd;">import</span> React <span style="color: #c678dd;">from</span> <span style="color: #98c379;">'react'</span>;
+<span style="color: #c678dd;">import</span> { View, Button, SafeAreaView, StyleSheet } <span style="color: #c678dd;">from</span> <span style="color: #98c379;">'react-native'</span>;
+<span style="color: #c678dd;">import</span> notifee <span style="color: #c678dd;">from</span> <span style="color: #98c379;">'@notifee/react-native'</span>;
+
+<span style="color: #5c6370; font-style: italic;">// Need to put in export default so it renders</span>
+<span style="color: #c678dd;">export default function</span> <span style="color: #e5c07b;">Screen</span>() {
+  <span style="color: #c678dd;">return</span> (
+    <span style="color: #d19a66;">&lt;View style={styles.content}&gt;</span>
+      <span style="color: #d19a66;">&lt;SafeAreaView&gt;</span>
+        <span style="color: #d19a66;">&lt;Button 
+          title="Display Notification" 
+          onPress={() =&gt; {}} 
+        /&gt;</span>
+      <span style="color: #d19a66;">&lt;/SafeAreaView&gt;</span>
+    <span style="color: #d19a66;">&lt;/View&gt;</span>
+  );
+}
+
+<span style="color: #c678dd;">const</span> styles = StyleSheet.<span style="color: #e06c75;">create</span>({
+  container: {
+    flex: <span style="color: #d19a66;">1</span>,
+    backgroundColor: <span style="color: #98c379;">'#fff'</span>,
+  },
+  content: {
+    flex: <span style="color: #d19a66;">1</span>,
+    justifyContent: <span style="color: #98c379;">'center'</span>,
+    alignItems: <span style="color: #98c379;">'center'</span>,
+  },
+});</code></pre>
+</div>
+
+
+
+we probably at this point restart metro and restart the android emulator with re runruning the commands npx react-native start and npx react-native run-android as explained before
+
+
+
+<p> if everything went right you should see the following on your emulator </p>
+</div>
+
+
+Now we need to go over some of the code. the plan is when we hit the button that will call a funciton that will create the notification . the name of that function is onDisplayNotification().
+
+inside that onDipslayNotifcation function we need to ask for permsision this is mostly for ios 
+
+// Request permissions (required for iOS)
+    await notifee.requestPermission()
+and also for android to create a channel 
+
+  // Create a channel (required for Android)
+    const channelId = await notifee.createChannel({
+      id: 'default',
+      name: 'Default Channel',
+    });
+and then we can finaly call the notifcaiton 
+
+    // Display a notification
+    await notifee.displayNotification({
+      title: 'Notification Title',
+      body: 'Main body content of the notification',
+      android: {
+        channelId,
+        smallIcon: 'name-of-a-small-icon', // optional, defaults to 'ic_launcher'.
+        // pressAction is needed if you want the notification to open the app when pressed
+        pressAction: {
+          id: 'default',
+        },
+      },
+    });
+
+
+
+
               </div>
 
+<!--
+<div class="terminal-block">
+    <div class="terminal-header">
+        <span class="dot red"></span>
+        <span class="dot yellow"></span>
+        <span class="dot green"></span>
+    </div>
+    <pre class="terminal-body"><code><span class="prompt">$</span><span class="command">npm install --save @notifee/react-native</span></code></pre>
+    -->
 
-            </article>
+        </article>
     </div>
 
     <script>
