@@ -4,162 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Advanced Notifications with Notifee</title>
-    <style>
-        /* --- CSS VARIABLES --- */
-        :root {
-            --bg-color: #ffffff;
-            --text-color: #1a202c;
-            --header-color: #111827;
-            --lead-bg: #f7fafc;
-            --lead-border: #3182ce;
-            --tag-bg: #edf2f7;
-            --tag-text: #4a5568;
-            --btn-bg: #333;
-            --btn-text: #fff;
-            --code-bg: #282c34;
-        }
-
-        [data-theme="dark"] {
-            --bg-color: #121212;
-            --text-color: #e0e0e0;
-            --header-color: #ffffff;
-            --lead-bg: #1a1a1a;
-            --lead-border: #3182ce;
-            --tag-bg: #2d3748;
-            --tag-text: #a0aec0;
-            --btn-bg: #f7fafc;
-            --btn-text: #333;
-            --code-bg: #000000;
-        }
-
-        /* --- BASE STYLES --- */
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            transition: background-color 0.3s, color 0.3s;
-        }
-
-        .container {
-            max-width: 750px;
-            margin: 60px auto;
-            padding: 0 20px;
-        }
-
-        /* --- TERMINAL STYLES --- */
-        .linux-terminal {
-            background-color: #0c0c0c;
-            border: 1px solid #444;
-            border-radius: 6px;
-            margin: 25px 0;
-            font-family: 'Ubuntu Mono', 'DejaVu Sans Mono', monospace;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
-            overflow: hidden;
-        }
-
-        .terminal-header {
-            background-color: #2d2d2d;
-            padding: 8px 15px;
-            color: #bbb;
-            font-size: 0.8rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid #444;
-        }
-
-        .terminal-body {
-            padding: 15px;
-            margin: 0;
-            color: #ffffff;
-            font-size: 0.95rem;
-            line-height: 1.4;
-            overflow-x: auto;
-        }
-
-        .prompt-user { color: #4e9a06; font-weight: bold; }
-        .prompt-path { color: #3465a4; font-weight: bold; }
-        .prompt-symbol { color: #ffffff; margin-right: 10px; }
-
-        .cursor {
-            display: inline-block;
-            width: 8px;
-            height: 15px;
-            background: #fff;
-            margin-left: 5px;
-            animation: blink 1s infinite;
-        }
-
-        @keyframes blink { 50% { opacity: 0; } }
-
-        /* --- UI ELEMENTS --- */
-        .theme-toggle {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            padding: 10px 15px;
-            background: var(--btn-bg);
-            color: var(--btn-text);
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-weight: 600;
-            z-index: 1000;
-        }
-
-        .post-title {
-            font-size: 2.8rem;
-            font-weight: 800;
-            color: var(--header-color);
-            margin-bottom: 20px;
-            letter-spacing: -0.02em;
-        }
-
-        .lead-text {
-            font-size: 1.1rem;
-            background-color: var(--lead-bg);
-            border-left: 5px solid var(--lead-border);
-            padding: 25px;
-            margin: 20px 0;
-            border-radius: 0 8px 8px 0;
-        }
-
-        .meta-info { display: flex; gap: 10px; margin-bottom: 40px; }
-        .tag {
-            background: var(--tag-bg);
-            color: var(--tag-text);
-            padding: 5px 12px;
-            border-radius: 4px;
-            font-size: 0.85rem;
-            font-weight: 600;
-        }
-
-        .code-block {
-            background-color: var(--code-bg);
-            color: #abb2bf;
-            padding: 20px;
-            border-radius: 8px;
-            font-family: 'Courier New', monospace;
-            overflow-x: auto;
-            margin: 20px 0;
-        }
-
-        .caption {
-            text-align: center;
-            font-style: italic;
-            font-size: 0.9rem;
-            margin-top: -10px;
-            margin-bottom: 20px;
-            display: block;
-        }
-
-        @media (max-width: 600px) {
-            .post-title { font-size: 2rem; }
-            .container { margin: 30px auto; }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -216,8 +61,6 @@
                 <pre class="terminal-body"><code><span class="prompt-user">hugo@debian</span>:<span class="prompt-path">~/NotifeeArticle</span><span class="prompt-symbol">$</span><span class="command">cd NotifeeDemonstration</span><span class="cursor"></span></code></pre>
             </div>
 
-
-
             <p>This is the starter code. It is a button with a basic "Hello World" setup. We've already included the Notifee imports. Remove <code>App.tsx</code> and create <code>App.js</code> with the following code:</p>
 
             <div class="code-block">
@@ -250,10 +93,6 @@
 
             <p>At this point, we should probably start Metro and the Android emulator </p>
 
-
-
-
-
             <p>Now run the Metro server (the React Native server):</p>
 
             <div class="linux-terminal">
@@ -275,21 +114,18 @@
             </div>
             <div class="lead-text">
                 If everything went right, you should see the button on your emulator!
- We still need to Write the Logic of what happens when it is clicked though           </div>
+                We still need to Write the Logic of what happens when it is clicked though
+            </div>
 
-<img
-  class=""
-  src="AndroidButton.png"
-  alt="Button For Android " />
+            <img src="AndroidButton.png" alt="Button For Android " />
             
-
-
             <h2>Writing the Logic</h2>
             <p>The plan is that hitting the button calls a function named <code>onDisplayNotification()</code> which creates the notification.</p>
 
             <p>Inside that function, we need to request permissions (primarily for iOS) and create a channel (required for Android):</p>
 
             <p> when displaying the notification section it is the title of the Notification and the Body we need to worry about this point. In the android subsection the channelId is the one that was made in section 2. For the smallIcon, it is a small icon that is needed if left out the default launcher icon will be used or you can type it out by uncommenting the icon. We will go over the icon requirements later on in a future post. Lastly, PressAction is the id of when the Notification is pressed . It will be discuss in a future post </p>
+            
             <div class="code-block">
 <pre style="margin: 0;"><code><span style="color: #5c6370; font-style: italic;">// Request permissions</span>
 <span style="color: #c678dd;">await</span> notifee.requestPermission();
@@ -311,26 +147,15 @@
     },
   },
 });</code></pre>
-      
-
-
-
-
-
-
-
-
-
-
-
             </div>
-<p>
-  Now we can finalize our <code>App.js</code>. We've defined the 
-  <code>onDisplayNotification</code> function inside the component and 
-  linked it to our Button's <code>onPress</code> event.
-</p>
 
-<div class="code-block">
+            <p>
+              Now we can finalize our <code>App.js</code>. We've defined the 
+              <code>onDisplayNotification</code> function inside the component and 
+              linked it to our Button's <code>onPress</code> event.
+            </p>
+
+            <div class="code-block">
 <pre style="margin: 0;"><code><span style="color: #c678dd;">import</span> React <span style="color: #c678dd;">from</span> <span style="color: #98c379;">'react'</span>;
 <span style="color: #c678dd;">import</span> { View, Button, SafeAreaView, StyleSheet } <span style="color: #c678dd;">from</span> <span style="color: #98c379;">'react-native'</span>;
 <span style="color: #c678dd;">import</span> notifee <span style="color: #c678dd;">from</span> <span style="color: #98c379;">'@notifee/react-native'</span>;
@@ -353,7 +178,7 @@
       body: <span style="color: #98c379;">'Main body content of the notification'</span>,
       android: {
         channelId,
-       <span style="color:#5c6370;font-style:italic;"></span> //smallIcon: 'ic_launcher'</span>, 
+        <span style="color: #5c6370; font-style: italic;">//smallIcon: 'ic_launcher',</span> 
         pressAction: {
           id: <span style="color: #98c379;">'default'</span>,
         },
@@ -380,19 +205,50 @@
     alignItems: <span style="color: #98c379;">'center'</span>,
   },
 });</code></pre>
-</div>
+            </div>
 
-<p> Here is the notification on a Andoid Phone Emulated </p>
-   
-<img
-  class="fit-picture"
-  src="AndroidNotification.png"
-  alt="Android Notification Using Notifee" />
+            <p> Here is the notification on a Andoid Phone Emulated </p>
+            
+            <img class="fit-picture" src="AndroidNotification.png" alt="Android Notification Using Notifee" />
+            <h1> Updating The Notification  </h1>
+            Click the button a few times and see what happens. 
+            <!-- this image needs to be update with the picture from the Desktop -->
+
+            <!-- TODO need a small video or gif showing the app being clickeed and the notifcaon keeps appearing -->
+<img src="NotificationNoId.jpg" alt="various notifcation are repeated in the same channel duplicating the notifcaitons ">
+
+            Notice what happens when the button is pressed multiple times. The Notificaiton is being sent to the channel each time. so if the button is pressed 5 times it is showing up 5 times. In order to update the current notificaiton it needs to change the current notification that is by adding an ID to the notificaiton.  
+
+in order to fix this we need to add id atrribute. by default if no id is given when submitting the notificaiotn it will be like a new unique id is given and the notificaiton will not be able to be updated so in order to fix we need the following code in the documentiotn it is just one line from the before one again its the id. 
+
+<pre>
+<code>
+// Sometime later...
+await notifee.displayNotification({
+  id: '123', //this is the important
+  title: 'Updated Notification Title',
+  body: 'Updated main body content of the notification',
+  android: {
+    channelId,
+  },
+});
+</code>
+</pre>
+           
+
+we just need to add one line of code is to the notifcaiton the 'id':123 and you will get a complete different behaviour from the application as you can see now if you click the button again an again the same notifcation stays
+Now here is the whole code with the
+       
+
+
+<!--TODO need to add a image showing the single notifcation or a short video that gif that shows the app clicking then the notifcation stays the same -->
 
 
 
-<p>          </p>
+
+
         </article>
+        
     </div>
 
     <script>
